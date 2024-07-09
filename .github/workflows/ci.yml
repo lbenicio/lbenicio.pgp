@@ -31,6 +31,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Remove git files
+        run: |
+          rm -rf .git &&
+          rm -rf .github &&
+          rm -rf .gitignore &&
+          rm -rf README.md &&
+          rm -rf LICENSE
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
